@@ -26,7 +26,8 @@ inputs:
 
 
     var pkeys = ["name"];
-    var result = tableMerger(source, load, pkeys);
+    var options = {normalize:true};
+    var result = tableMerger(source, load, pkeys, options);
     console.log(result);
 
 
