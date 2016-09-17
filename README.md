@@ -56,9 +56,9 @@ return an object containing the result table and the the row that haven't been m
 *console.log output:*
 > {"result":[["beer
 > style","name","site","alc","score"],["Dark","Chocolate
-> stout","http://www.rogue.com/rogue_beer/chocolate-stout/",5.8,"\*****"],["Dark","Guinness","https://www.guinness.com/",4.2,"\****"],["IPA","cerdo
-> voladores","http://www.barcelonabeercompany.com/en/Cerdos-Voladores",6,"\*****"],["IPA","monteith's","http://www.monteiths.co.nz/Beer-And-Cider/IPA",5.5,"\****"],["IPA","Punk
-> IPA","https://www.brewdog.com/beer/headliners/punk-ipa",5.6,"\****"]],"unMatched":[]}
+> stout","http://www.rogue.com/rogue_beer/chocolate-stout/",5.8,"*****"],["Dark","Guinness","https://www.guinness.com/",4.2,"****"],["IPA","cerdo
+> voladores","http://www.barcelonabeercompany.com/en/Cerdos-Voladores",6,"*****"],["IPA","monteith's","http://www.monteiths.co.nz/Beer-And-Cider/IPA",5.5,"****"],["IPA","Punk
+> IPA","https://www.brewdog.com/beer/headliners/punk-ipa",5.6,"****"]],"unMatched":[]}
 
 *result:*  
 
