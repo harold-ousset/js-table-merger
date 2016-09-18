@@ -154,7 +154,7 @@ function tableMerger(source, load, pkeys, options) {
   );
 
   // reconnect header
-  if (["none","source"].indexOf(options.header) == -1 && options.skipHeader != true) {
+  if (["none","load"].indexOf(options.header) == -1 && options.skipHeader != true) {
     source.unshift(sourceHeader);
   }
   
