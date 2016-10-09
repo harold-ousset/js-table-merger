@@ -1,0 +1,57 @@
+<h1>Table Merger</h1>
+<h2>Table 1</h2>
+<div id="table1"></div>
+<h2>Table 2</h2>
+<div id="table2"></div>
+<h2>Merged Table</h2>
+<button onclick="mergeTable()">merge table 1 and 2</button>
+<button onclick="mergeTable({appendUnmached: true})">merge table 1 and 2 and append unmached</button>
+<div id="mergedTable"></div>
+<script type="text/JavaScript" src="table-merger.js"></script>
+<script>
+function buildTable(source) {
+  var arr = source.slice();
+  var out = '<table>';
+  var header = arr.shift();
+  out += header.map(
+    function (elem) {
+      return '<th>' + elem + '</th>';
+    }
+  ).join('');
+  out += arr.map(
+    function (row) {
+      return '<tr>' + row.map(
+        function (elem) {
+          return '<td>' + elem + '</td>';
+        }
+      ).join('') + '</tr>';
+    }
+  ).join('');
+  out += '</table>';
+  return out;
+}
+
+var table1 = [
+  ['beer style', 'name', 'site', 'alc', 'score'],
+  ['Dark', 'Chocolate stout', 'http://www.rogue.com/rogue_beer/chocolate-stout/', 5.8, '*****'],
+  ['Dark', 'Guinness', 'https://www.guinness.com/', 4.2, '****'],
+  ['IPA', 'cerdo voladores', 'http://www.barcelonabeercompany.com/en/Cerdos-Voladores', 6, '***'],
+  ['IPA', 'monteith\'s', 'http://www.monteiths.co.nz/Beer-And-Cider/IPA', 5.5, ''],
+  ['IPA', 'Punk IPA', 'https://www.brewdog.com/beer/headliners/punk-ipa', 5.6, '****'],
+];
+var table2 = [['name', 'score'], ['monteith\'s', '****'],
+  ['cerdo voladores', '*****'],
+  ['asarold', '*****'],
+];
+
+window.onload = function () {
+  document.getElementById('table1').innerHTML = buildTable(table1);
+  document.getElementById('table2').innerHTML = buildTable(table2);
+};
+
+function mergeTable(options) {
+  var pkeys = ['name'];
+  var mergedTable = table1.merge2d(table2, pkeys, options);
+  document.getElementById('mergedTable').innerHTML = buildTable(mergedTable);
+}
+</script>
